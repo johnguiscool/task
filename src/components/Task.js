@@ -6,6 +6,10 @@ class Task extends React.Component{
 
 	state = {text: 'task description', completed: false};
 
+	completeTask = () => {
+		this.setState({completed:true});
+	};
+
 	render() {			
 
 		let className = "";			
@@ -16,9 +20,9 @@ class Task extends React.Component{
 		}
 
 		return (
-		<div className={className}>
-			{this.state.text}
-		</div>
+			<div className={className} onClick={this.completeTask}>
+				{this.state.text}
+			</div>
 		);
 	};
 }
